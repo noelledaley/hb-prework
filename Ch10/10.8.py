@@ -37,18 +37,12 @@ def generate_birthdays():
         i += 1
     return birthdays
 
-birthdays = generate_birthdays()
+def calculate_stats(trials):
+    i = 0
+    duplicates = 0
+    for i in range(trials):
+        if has_duplicates(generate_birthdays()):
+            duplicates += 1
+    print "In %s classrooms with %s students, %s%% had duplicate birthdays" % (trials, number_of_students, (float(duplicates)/trials) * 100)
 
-count = 0
-total = 0
-
-print has_duplicates(birthdays)
-
-# for i in range(23):
-#     if has_duplicates(birthdays):
-#         count += 1
-#         total += 1
-#     else:
-#         total += 1
-#
-# print (float(count) / float(total)) * 100.0
+print calculate_stats(trials)
