@@ -3,6 +3,7 @@ Exercise 10.9. Write a function called remove_duplicates that takes a list and r
 """
 
 example = [1, 5, 5, 9, 3]
+example2 = [3, 5, 10, 2]
 
 def remove_duplicates(t):
     new_list = []
@@ -12,3 +13,4 @@ def remove_duplicates(t):
     return new_list
 
 print remove_duplicates(example)
+print remove_duplicates(example2)
