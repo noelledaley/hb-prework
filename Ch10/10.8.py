@@ -12,7 +12,7 @@ def has_duplicates(t):
 
 
 example = [1, 2, 2, 5]
-example2 = [5, 3, 2, 1]
+example2 = [5, 9, 2, 1]
 example3 = [1, 2, 3, 4, 4, 5, 6, 6]
 
 print has_duplicates(example)
@@ -28,20 +28,19 @@ import random
 def generate_birthdays():
     birthdays = []  # create empty list of birthdays
     i = 0
-    while i < 265:
-        # import pdb; pdb.set_trace()
-
-        date = random.randint(1, 265)  # generate 20 random values between 1 - 265 days, since there are 265 days in a year
+    while i < 23:
+        date = random.randint(1, 365)  # generate 23 random values between 1 - 265 days, since there are 365 days in a year
         birthdays.append(date)
         i += 1
     return birthdays
 
 birthdays = generate_birthdays()
+
 count = 0
 total = 0
 
-for i in birthdays:
-    if i in birthdays:
+for i in range(23):
+    if has_duplicates(birthdays):
         count += 1
         total += 1
     else:
