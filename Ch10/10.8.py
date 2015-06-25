@@ -25,10 +25,13 @@ Part 2: If there are 23 students in your class, what are the chances that two of
 
 import random
 
+number_of_students = 23
+trials = 1000
+
 def generate_birthdays():
     birthdays = []  # create empty list of birthdays
     i = 0
-    while i < 23:
+    while i < number_of_students:
         date = random.randint(1, 365)  # generate 23 random values between 1 - 265 days, since there are 365 days in a year
         birthdays.append(date)
         i += 1
@@ -39,11 +42,13 @@ birthdays = generate_birthdays()
 count = 0
 total = 0
 
-for i in range(23):
-    if has_duplicates(birthdays):
-        count += 1
-        total += 1
-    else:
-        total += 1
+print has_duplicates(birthdays)
 
-print (float(count) / float(total)) * 100.0
+# for i in range(23):
+#     if has_duplicates(birthdays):
+#         count += 1
+#         total += 1
+#     else:
+#         total += 1
+#
+# print (float(count) / float(total)) * 100.0
